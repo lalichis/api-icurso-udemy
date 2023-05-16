@@ -2,7 +2,7 @@ const express = require("express");
 const Incident = require("../models/incidents");
 
 function holaMundo(req, res){
-    console.log("Derechos reservados Lalinsky 2023");
+    console.log("Derechos reservados Lalinsky (copirrait) 2023");
 }
 
 async function createIncident(req, res){
