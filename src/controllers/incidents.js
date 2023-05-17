@@ -88,6 +88,9 @@ async function updateIncident(req, res){
     const id = params.id;
 
     try {
+        console.log("Imprimiento el id");
+        console.log(id);
+        console.log(params);
         const updatedIncident = await Incident.findByIdAndUpdate(id, params);
         if (!updatedIncident){
             res.status(400).send({ msg: "Error al actualizar el estatus del incidente"});
@@ -113,6 +116,7 @@ async function deleteIncident(req, res){
     try {
         if(!deletedIncident){
             res.status(400).send({msg: "Error al borrar incidente"});
+            console.log(error);
         }
         else {
             res.status(200).send({msg: "Incidente borrado correctamente"});
