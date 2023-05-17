@@ -85,9 +85,9 @@ async function getIncidentsByState(req, res){
 
 async function actualizaIncidente(req, res){
     const params = req.body;
-    const id = params.id;
+    const idIncident = params.id;
     try {
-        const actIncident = await Incident.findByIdAndUpdate(id, params);
+        const actIncident = await Incident.findByIdAndUpdate(idIncident, params);
         if(!actIncident){
             res.status(400).send({ "msg": "Error al actualizar el incidente"});
         }
