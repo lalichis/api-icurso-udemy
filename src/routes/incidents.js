@@ -10,6 +10,7 @@ api.get('/getIncidentsBySeverity', IncidentControllers.getIncidentsBySeverity);
 api.get('/getIncidentsByStatus', IncidentControllers.getIncidentsByState);
 api.get('/updateIncident', IncidentControllers.updateIncident);
 api.delete('/deleteIncident', IncidentControllers.deleteIncident);
+api.put('/actualizaIncidente', IncidentControllers.updateIncident);
  
 
 module.exports = api;

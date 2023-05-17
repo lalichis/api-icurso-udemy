@@ -83,16 +83,30 @@ async function getIncidentsByState(req, res){
 }
 
 
+async function actualizaIncidente(req, res){
+    const params = req.body;
+    const id = params.id;
+    try {
+        const actIncident = await Incident.findByIdAndUpdate(id, params);
+        if(!actIncident){
+            res.status(400).send({ "msg": "Error al actualizar el incidente"});
+        }
+        else {
+            res.status(200).send({ "msg" : "El incidente se actualizó con éxito"});
+        }
+
+    } catch (error) {
+        res.status(500).send(error);   
+    }
+}
+
 async function updateIncident(req, res){
     console.log("Entrando, loco");
     const params = req.body;
     const id = params.id;
 
     try {
-        console.log(req.body);
-        console.log("Imprimiento el id");
-        console.log(id);
-        console.log(params);
+
         const updatedIncident = await Incident.findByIdAndUpdate(id, params);
         if (!updatedIncident){
             res.status(400).send({ msg: "Error al actualizar el estatus del incidente"});
@@ -138,6 +152,7 @@ module.exports = {
     getIncidentsBySeverity,
     getIncidentsByState,
     updateIncident,
-    deleteIncident
+    deleteIncident,
+    actualizaIncidente
 }
 
