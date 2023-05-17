@@ -84,10 +84,12 @@ async function getIncidentsByState(req, res){
 
 
 async function updateIncident(req, res){
+    console.log("Entrando, loco");
     const params = req.body;
     const id = params.id;
 
     try {
+        console.log(req.body);
         console.log("Imprimiento el id");
         console.log(id);
         console.log(params);
