@@ -101,7 +101,7 @@ async function actualizaIncidente(req, res){
 }
 
 async function updateIncident(req, res){
-    console.log("Entrando, loco");
+
     const params = req.body;
     const id = params.id;
 
